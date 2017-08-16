@@ -1,0 +1,21 @@
+ul {
+  margin-top: 15px;
+  list-style: none; }
+
+.company-box {
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  padding: 0; }
+  .company-box .image-container {
+    flex: 1;
+    max-height: 150px;
+    padding-top: 10px; }
+    .company-box .image-container img {
+      display: block;
+      margin: auto;
+      height: 100%; }
+      .company-box .image-container img:hover {
+        filter: grayscale(100%);
+        transition: all 0.5s ease; }
+
+/*# sourceMappingURL=main.css.map */

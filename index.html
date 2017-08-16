@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app="app" data-framework="typescript">
+	<head>
+		<meta charset="utf-8">
+		<title>Client Management System</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/main.css">
+		<style>[ng-cloak] { display: none; }</style>
+	</head>
+	<body>
+		<section ng-controller="companyController" class="container-fluid">
+			<ul ng-show="companies.length" ng-cloak class="row">
+				<li ng-repeat="company in companies | orderBy:'name' track by $index" class="col-xl-2 col-lg-4 col-md-6 card company-box">
+					<div class="image-container">
+						<img src="{{company.picture}}">
+					</div>
+					<div class="card-body">
+						<h4><a href="{{company.url}}" target="_blank">{{company.name}}</a></h4>
+						<p>{{company.email}}</p>
+					</div>
+					<div class="card-footer">
+						<button ng-click="vm.sendEmail(company)" class="send-email btn btn-info">Email</button>
+						<button ng-click="vm.remove(company)" class="destroy btn btn-danger">Remove</button>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="js/Application.js"></script>
+	</body>
+</html>
